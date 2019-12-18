@@ -1,5 +1,9 @@
 <template>
   <div class="movie">
+    <span
+      class="movie-notification"
+      v-bind:class="showNotification ? 'movie-notification-on' : 'movie-notification-off'"
+    >{{inWatchlist ? 'Movie added to list' : 'Movie removed from list'}}</span>
     <sequential-entrance>
       <div class="movie-detail">
         <sequential-entrance>
@@ -92,7 +96,7 @@
           <button
             class="movie-detail-btn"
             v-bind:class="[isActive ? 'movie-detail-orange' : 'movie-detail-red']"
-            v-on:click="inWatchlist = !inWatchlist , isActive = !isActive"
+            v-on:click="inWatchlist = !inWatchlist , isActive = !isActive , showNotification = !showNotification"
           >{{ inWatchlist ? '- remove from watchlist' : '+ add to watchlist' }}</button>
         </sequential-entrance>
       </div>
@@ -131,6 +135,7 @@ export default {
       isActive: true,
       showMore: false,
       showMoreButton: false,
+      showNotification: false,
       details: {
         "0001": {
           id: "0001",
@@ -206,6 +211,31 @@ export default {
       rgba(255, 96, 0, 1) 7%,
       rgba(255, 255, 255, 1) 22%
     );
+  }
+
+  &-notification {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    color: #fff;
+    display: block;
+    position: fixed;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 60%;
+    left: 20%;
+    opacity: 0;
+    z-index: 10;
+    background: #00000087;
+    transition: all 3000ms;
+  }
+
+  &-notification-off {
+    opacity: 0;
+  }
+
+  &-notification-on {
+    opacity: 1;
   }
 
   &-detail {
