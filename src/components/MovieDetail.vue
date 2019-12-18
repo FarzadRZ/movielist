@@ -139,13 +139,13 @@ export default {
           duration: "PT142M",
           originalTitle: "The Shawshank Redemption",
           imdbRating: 9.3,
-          actors: ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+          actors: ["Tim Robbins", "Morgan Freeman", "Bob Gunton", "Bob Gunon"],
           writers: ["Stephen King"],
           directors: ["Frank Darabont"],
           storyline:
             "Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.",
           posterurl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SY500_CR0,0,336,500_AL_.jpg"
+            "http://isleofcinema.com/wp-content/uploads/2010/08/shawshankredemption1.jpg"
         },
         "0002": {
           id: "0002",
@@ -167,7 +167,7 @@ export default {
           storyline:
             "When the aging head of a famous crime family decides to transfer his position to one of his subalterns, a series of unfortunate events start happening to the family, and a war begins between all the well-known families leading to insolence, deportation, murder and revenge, and ends with the favorable successor being finally chosen.                Written by\nJ. S. Golden",
           posterurl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BZTRmNjQ1ZDYtNDgzMy00OGE0LWE4N2YtNTkzNWQ5ZDhlNGJmL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY500_CR0,0,352,500_AL_.jpg"
+            "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg"
         },
         "0003": {
           id: "0003",
@@ -181,8 +181,7 @@ export default {
           storyline:
             'Set within a year after the events of Batman Begins, Batman, Lieutenant James Gordon, and new district attorney Harvey Dent successfully begin to round up the criminals that plague Gotham City until a mysterious and sadistic criminal mastermind known only as the Joker appears in Gotham, creating a new wave of chaos. Batman\'s struggle against the Joker becomes deeply personal, forcing him to "confront everything he believes" and improve his technology to stop him. A love triangle develops between Bruce Wayne, Dent and Rachel Dawes.                Written by\nLeon Lombardi',
           actors: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
-          posterurl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY500_CR0,0,337,500_AL_.jpg"
+          posterurl: "https://miro.medium.com/max/625/0*61G-CzFH3-ghyEq7.jpg"
         }
       },
       inWatchlist: false
@@ -199,17 +198,32 @@ export default {
     rgba(255, 96, 0, 1) 7%,
     rgba(255, 255, 255, 1) 28%
   );
+
+  @media (max-width: 374px) {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 96, 0, 1) 0%,
+      rgba(255, 96, 0, 1) 7%,
+      rgba(255, 255, 255, 1) 22%
+    );
+  }
+
   &-detail {
     padding: 20px 20px 0;
     animation-delay: 1000ms;
     animation-duration: 2s;
 
     &-photo {
-      width: 180px;
-      height: 230px;
+      width: 175px;
+      height: 220px;
       position: relative;
       animation-delay: 100ms;
       animation-duration: 3s;
+
+      @media (max-width: 374px) {
+        width: 130px;
+        height: 160px;
+      }
 
       &-image {
         width: 100%;
@@ -229,11 +243,23 @@ export default {
         right: -16px;
         transition: all 500ms;
 
+        @media (max-width: 374px) {
+          font-size: 25px;
+          width: 25px;
+          height: 25px;
+          bottom: -10px;
+          right: -10px;
+        }
+
         &-plus {
           position: absolute;
           top: -3px;
           left: 8px;
           width: 55%;
+
+          @media (max-width: 374px) {
+            left: 6px;
+          }
         }
       }
 
@@ -252,9 +278,17 @@ export default {
       align-items: center;
       margin: 20px 0 0;
 
+      @media (max-width: 374px) {
+        margin: 15px 0 0;
+      }
+
       &-title {
-        font-size: 24px;
+        font-size: 23px;
         width: 50%;
+
+        @media (max-width: 374px) {
+          font-size: 19px;
+        }
       }
 
       &-box {
@@ -294,6 +328,10 @@ export default {
     &-info {
       font-size: 13px;
 
+      @media (max-width: 374px) {
+        font-size: 12px;
+      }
+
       &-part {
         color: #5d5d5d;
 
@@ -325,6 +363,12 @@ export default {
       padding: 10px 0;
       border-bottom: 1px solid #a4a4a4;
       line-height: 21px;
+
+      @media (max-width: 374px) {
+        font-size: 12px;
+        line-height: 19px;
+        padding: 8px 0;
+      }
     }
 
     &-members {
@@ -376,13 +420,18 @@ export default {
       border-radius: 10px;
       width: 80%;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 20px;
       border: none;
       outline: none;
       position: relative;
       text-decoration: none;
       transition: all 500ms;
       animation-duration: 4s;
+
+      @media (max-width: 374px) {
+        font-size: 15px;
+        width: 75%;
+      }
     }
 
     &-orange {

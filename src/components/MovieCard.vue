@@ -79,10 +79,16 @@ export default {
   margin-bottom: 20px;
 
   &-photo {
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
     height: 350px;
     margin: 0 auto;
     animation-duration: 3s;
+
+    @media (max-width: 374px) {
+      max-width: 200px;
+      height: 270px;
+    }
 
     &-image {
       max-width: 100%;
@@ -95,9 +101,28 @@ export default {
     font-size: 30px;
     padding: 20px 0 10px;
     height: 100px;
+
+    @media (min-width: 413px) {
+      font-size: 35px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 25px;
+      height: 80px;
+      padding: 15px 0 5px;
+    }
   }
 
   &-info {
+    @media (min-width: 413px) {
+      font-size: 17px;
+      padding: 10px 0;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 13px;
+    }
+
     &-part {
       color: #5d5d5d;
 
@@ -129,8 +154,20 @@ export default {
     display: block;
     margin: 15px 0;
 
+    @media (min-width: 413px) {
+      font-size: 25px;
+    }
+
+    @media (max-width: 374px) {
+      margin: 10px 0;
+    }
+
     &-number {
       font-size: 28px;
+
+      @media (min-width: 413px) {
+        font-size: 35px;
+      }
     }
   }
 
@@ -141,6 +178,10 @@ export default {
     position: relative;
     margin: 0 auto 20px;
     border-radius: 35px;
+
+    @media (min-width: 413px) {
+      width: 80%;
+    }
 
     &-line {
       background: #ff6000;
@@ -169,6 +210,15 @@ export default {
     position: relative;
     text-decoration: none;
     animation-duration: 4s;
+
+    @media (min-width: 413px) {
+      font-size: 20px;
+      width: 82%;
+    }
+
+    @media (max-width: 374px) {
+      width: 70%;
+    }
   }
 }
 
